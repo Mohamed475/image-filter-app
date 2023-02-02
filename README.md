@@ -9,6 +9,18 @@ The project is split into three parts:
 2. [The RestAPI Backend](https://github.com/udacity/cloud-developer/tree/master/course-02/exercises/udacity-c2-restapi), a Node-Express server which can be deployed to a cloud service. [Covered in the course]
 3. [The Image Filtering Microservice](https://github.com/udacity/cloud-developer/tree/master/course-02/project/image-filter-starter-code), the final project for the course. It is a Node-Express application which runs a simple script to process images. [Your assignment]
 
+## API Endpoint URL
+
+```
+subdomain.domain.com/filteredimage?image_url={{URL}}
+```
+
+## link to the endpoint URL for my running elastic beanstalk deployment
+
+```
+http://image-filter-app-11-dev.us-east-1.elasticbeanstalk.com/filteredimage?image_url=https://upload.wikimedia.org/wikipedia/commons/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg
+```
+
 ## Tasks
 
 ### Setup Node Environment
@@ -49,7 +61,3 @@ Prevent requests without valid authentication headers.
 Add your own domain name and have it point to the running services (try adding a subdomain name to point to the processing server)
 
 > !NOTE: Domain names are not included in AWS’ free tier and will incur a cost.
-
-## link to the endpoint URL for my running elastic beanstalk deployment
-
-http://image-filter-app-11-dev.us-east-1.elasticbeanstalk.com/filteredimage?image_url=https://upload.wikimedia.org/wikipedia/commons/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg
