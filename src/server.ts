@@ -1,8 +1,10 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import {filterImageFromURL, deleteLocalFiles} from './util/util';
+import morgan from 'morgan';
 import { Url } from 'url';
 import { url } from 'inspector';
+
 
 (async () => {
 
@@ -14,6 +16,8 @@ import { url } from 'inspector';
   
   // Use the body parser middleware for post requests
   app.use(bodyParser.json());
+  app.use(morgan('combined'));
+
 
   // @TODO1 IMPLEMENT A RESTFUL ENDPOINT
   // GET /filteredimage?image_url={{URL}}
@@ -53,7 +57,6 @@ import { url } from 'inspector';
   app.get( "/", async ( req, res ) => {
     res.send("try GET /filteredimage?image_url={{}}")
   } );
-  
 
   // Start the Server
   app.listen( port, () => {
