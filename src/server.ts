@@ -37,12 +37,12 @@ import { url } from 'inspector';
 
   //! END @TODO1
   app.get( "/filteredimage", async(req:express.Request, res:express.Response) => {
-    let {image_url} = req.query;
+    let { image_url }: {image_url : string} = req.query;
     if (!image_url){
       res.status(400).send('Error: The submitted url is empty');
     } else {
       await filterImageFromURL(image_url).then( function (image_filtered_path){
-        res.sendFile(image_filtered_path, () => {       
+        res.status(200).sendFile(image_filtered_path, () => {       
           deleteLocalFiles([image_filtered_path]);       
         });   
       }).catch(function(err){
